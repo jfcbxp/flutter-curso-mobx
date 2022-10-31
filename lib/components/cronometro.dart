@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:promodoro/components/cronometro_botao.dart';
 
 class Cronometro extends StatelessWidget {
   const Cronometro({super.key});
@@ -23,6 +22,28 @@ class Cronometro extends StatelessWidget {
             Text(
               '25:00',
               style: TextStyle(fontSize: 120, color: Colors.white),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: CronometroBotao(
+                      texto: 'Iniciar', icone: Icons.play_arrow),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: CronometroBotao(texto: 'Parar', icone: Icons.stop),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child:
+                      CronometroBotao(texto: 'Reiniciar', icone: Icons.refresh),
+                )
+              ],
             )
           ]),
     );
